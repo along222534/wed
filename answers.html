@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Virus - Answers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0e0e10;
+            color: #e0e0e0;
+        }
+        header, footer {
+            background-color: #1b1b1f;
+            color: #00ff99;
+            text-align: center;
+            padding: 1rem 2rem;
+        }
+        header h1, footer p {
+            margin: 0;
+        }
+        main {
+            padding: 2rem;
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+        section h2 {
+            color: #00ff99;
+            border-bottom: 2px solid #444;
+            padding-bottom: 0.5rem;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            background-color: #1b1b1f;
+            border: 1px solid #333;
+            border-radius: 4px;
+        }
+        ul li:hover {
+            background-color: #2b2b31;
+        }
+        .language-switch {
+            margin-top: 1rem;
+            text-align: center;
+        }
+        .language-switch a {
+            color: #00ff99;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+        .language-switch a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function switchLanguage(lang) {
+            const elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(element => {
+                const text = element.getAttribute(`data-${lang}`);
+                if (text) {
+                    element.textContent = text;
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1 data-lang data-en="Cyber Virus - Answers" data-th="ไซเบอร์ไวรัส - เฉลยคำตอบ">Cyber Virus - Answers</h1>
+        <p data-lang data-en="Review the answers to questions from the game." data-th="ทบทวนคำตอบของคำถามในเกม">Review the answers to questions from the game.</p>
+    </header>
+    <div class="language-switch">
+        <p>Choose Language: <a href="#" onclick="switchLanguage('en')">English</a> | <a href="#" onclick="switchLanguage('th')">ภาษาไทย</a></p>
+    </div>
+    <main>
+        <section>
+            <h2 data-lang data-en="Answers" data-th="คำตอบ">Answers</h2>
+            <ul>
+                <li data-lang data-en="Question 1: What is a Trojan Horse? Answer: A malicious software disguised as legitimate."
+                    data-th="คำถาม 1: ม้าโทรจันคืออะไร? คำตอบ: ซอฟต์แวร์ทที่เป็นอันตรายปลอมเป็นซอฟต์แวร์ทปกติ">Question 1: What is a Trojan Horse? Answer: A malicious software disguised as legitimate.
+                </li>
+                <li data-lang data-en="Question 2: How does a Worm spread? Answer: Through self-replication in networks."
+                    data-th="คำถาม 2: เวิร์มแพร่กระจายอย่างไร? คำตอบ: ผ่านการจำลองตัวเองในเครือข่าย">Question 2: How does a Worm spread? Answer: Through self-replication in networks.
+                </li>
+                <li data-lang data-en="Question 3: What does Ransomware do? Answer: Encrypts your data and demands payment for decryption."
+                    data-th="คำถาม 3: แรนซัมแวร์ทำอะไร? คำตอบ: เข้ารหัสข้อมูลของคุณและเรียกร้างค่าไถ่เพื่อถอดรหัส">Question 3: What does Ransomware do? Answer: Encrypts your data and demands payment for decryption.
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Cyber Virus Team. </p>
+    </footer>
+</body>
+</html>

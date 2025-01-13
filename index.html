@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Virus - Learn About Computer Viruses</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0d1117;
+            color: #c9d1d9;
+        }
+        header {
+            background: linear-gradient(135deg, #1f1f1f, #2c2c2c);
+            color: #00ffff;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+        }
+        header p {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #80e0ff;
+        }
+        nav {
+            background-color: #161b22;
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        nav a {
+            color: #00ffff;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-size: 1rem;
+            position: relative;
+        }
+        nav a:hover {
+            color: #80e0ff;
+            text-shadow: 0 0 8px #00ffff;
+        }
+        nav a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #00ffff;
+            transition: width 0.3s;
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+        .language-switch {
+            margin-top: 1rem;
+            text-align: center;
+        }
+        .language-switch a {
+            color: #00ffff;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            font-size: 1rem;
+        }
+        .language-switch a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        section {
+            margin-bottom: 3rem;
+            background: #161b22;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+        section h2 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid #00ffff;
+            padding-bottom: 0.5rem;
+            color: #80e0ff;
+        }
+        section p, section ul {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        section ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        section ul li {
+            margin: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        section ul li::before {
+            content: '>';
+            color: #00ffff;
+            position: absolute;
+            left: 0;
+        }
+        footer {
+            background: #1f1f1f;
+            color: #80e0ff;
+            text-align: center;
+            padding: 1.5rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.5);
+        }
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+            nav a {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+    <script>
+        function switchLanguage(lang) {
+            const elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(element => {
+                const text = element.getAttribute(`data-${lang}`);
+                if (text) {
+                    element.textContent = text;
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1 data-lang data-en="Cyber Virus" data-th="ไซเบอร์ไวรัส">Cyber Virus</h1>
+        <p data-lang data-en="Your Resource for Learning About Computer Viruses" data-th="แหล่งความรู้เกี่ยวกับไวรัสคอมพิวเตอร์">Your Resource for Learning About Computer Viruses</p>
+    </header>
+    <nav>
+        <a href="#viruses" data-lang data-en="Virus Types" data-th="ประเภทของไวรัส">Virus Types</a>
+        <a href="#prevention" data-lang data-en="Prevention" data-th="การป้องกัน">Prevention</a>
+        <a href="#game" data-lang data-en="Play the Game" data-th="เล่นเกม">Play the Game</a>
+        <a href="answers.html" data-lang data-en="Answers" data-th="เฉลยคำตอบ">Answers</a>
+    </nav>
+    <div class="language-switch">
+        <p>Choose Language: <a href="#" onclick="switchLanguage('en')">English</a> | <a href="#" onclick="switchLanguage('th')">ภาษาไทย</a></p>
+    </div>
+    <main>
+        <section id="viruses">
+            <h2 data-lang data-en="Types of Computer Viruses" data-th="ประเภทของไวรัสคอมพิวเตอร์">Types of Computer Viruses</h2>
+            <p data-lang data-en="Learn about different types of computer viruses, their behavior, and examples:" data-th="เรียนรู้เกี่ยวกับประเภทของไวรัสคอมพิวเตอร์ พฤติกรรม และตัวอย่าง:">Learn about different types of computer viruses, their behavior, and examples:</p>
+            <ul>
+                <li data-lang data-en="Trojan Horse: Malicious software disguised as legitimate." data-th="ม้าโทรจัน: ซอฟต์แวร์ที่เป็นอันตรายปลอมเป็นซอฟต์แวร์ปกติ">Trojan Horse: Malicious software disguised as legitimate.</li>
+                <li data-lang data-en="Worm: Self-replicating virus that spreads through networks." data-th="เวิร์ม: ไวรัสที่แพร่กระจายผ่านเครือข่าย">Worm: Self-replicating virus that spreads through networks.</li>
+                <li data-lang data-en="Ransomware: Encrypts your data and demands payment for decryption." data-th="แรนซัมแวร์: เข้ารหัสข้อมูลของคุณและเรียกร้องค่าไถ่เพื่อถอดรหัส">Ransomware: Encrypts your data and demands payment for decryption.</li>
+                <li data-lang data-en="Spyware: Software that secretly gathers user data." data-th="สปายแวร์: ซอฟต์แวร์ที่แอบเก็บข้อมูลผู้ใช้">Spyware: Software that secretly gathers user data.</li>
+                <li data-lang data-en="Adware: Displays unwanted advertisements." data-th="แอดแวร์: แสดงโฆษณาที่ไม่พึงประสงค์">Adware: Displays unwanted advertisements.</li>
+                <li data-lang data-en="Rootkit: Hides malicious activities from detection." data-th="รูทคิท: ซ่อนกิจกรรมที่เป็นอันตราย">Rootkit: Hides malicious activities from detection.</li>
+                <li data-lang data-en="File Infector: Embeds itself into files and spreads." data-th="ไฟล์อินเฟคเตอร์: แฝงตัวในไฟล์และแพร่กระจาย">File Infector: Embeds itself into files and spreads.</li>
+            </ul>
+        </section>
+        <section id="prevention">
+            <h2 data-lang data-en="Prevention Tips" data-th="เคล็ดลับการป้องกัน">Prevention Tips</h2>
+            <p data-lang data-en="Follow these tips to protect your system:" data-th="ทำตามเคล็ดลับเหล่านี้เพื่อปกป้องระบบของคุณ:">Follow these tips to protect your system:</p>
+            <ul>
+                <li data-lang data-en="Install reputable antivirus software." data-th="ติดตั้งซอฟต์แวร์ป้องกันไวรัสที่เชื่อถือได้">Install reputable antivirus software.</li>
+                <li data-lang data-en="Keep your operating system and applications updated." data-th="อัปเดตระบบปฏิบัติการและแอปพลิเคชันของคุณ">Keep your operating system and applications updated.</li>
+                <li data-lang data-en="Avoid clicking on suspicious links or downloading unknown files." data-th="หลีกเลี่ยงการคลิกลิงก์ที่น่าสงสัยหรือดาวน์โหลดไฟล์ที่ไม่รู้จัก">Avoid clicking on suspicious links or downloading unknown files.</li>
+            </ul>
+        <section id="game">
+            <h2 data-lang data-en="Play Cyber Virus" data-th="เล่นไซเบอร์ไวรัส">Play Cyber Virus</h2>
+            <p data-lang data-en="Experience the excitement of our game and learn more about cybersecurity." data-th="สัมผัสความตื่นเต้นของเกมของเราและเรียนรู้เพิ่มเติมเกี่ยวกับความปลอดภัยทางไซเบอร์">Experience the excitement of our game and learn more about cybersecurity. <a href="#">Download the game here</a>.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Cyber Virus Team. </p>
+    </footer>
+</body>
+</html>
