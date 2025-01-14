@@ -202,6 +202,61 @@
         box-shadow: 0 0 25px #00ffff, 0 0 45px #00ffff, 0 0 60px #0088ff;
     }
 }
+/* เอฟเฟกต์อนุภาค */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes particle {
+    from {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100vh) translateX(calc(20px * var(--dir)));
+        opacity: 0;
+    }
+}
+
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #00ffff;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: particle linear infinite;
+}
+
+#particle-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none;
+}
+
+#particle-container .particle:nth-child(odd) {
+    background: #0088ff;
+}
+
+#particle-container .particle {
+    --dir: 1;
+    animation-duration: calc(2s + 3s * random());
+    animation-delay: calc(-3s * random());
+    transform: translateX(calc(100vw * random())) translateY(calc(-100vh * random()));
+}
 
 </style>
     </style>
@@ -268,6 +323,25 @@
                     <source src="สงครามไซเบอร์ครั้งแรกของโลก.mp4" type="video/mp4">
                     <p>Your browser does not support HTML5 video. Here is a <a href="ส.mp4">link to the video</a> instead.</p>
                 </video>
+                <script>
+                    function random() {
+                        return Math.random();
+                    }
+                
+                    const particleContainer = document.createElement('div');
+                    particleContainer.id = 'particle-container';
+                    document.body.appendChild(particleContainer);
+                
+                    for (let i = 0; i < 50; i++) {
+                        const particle = document.createElement('div');
+                        particle.className = 'particle';
+                        particle.style.animationDuration = `${2 + 3 * Math.random()}s`;
+                        particle.style.animationDelay = `-${3 * Math.random()}s`;
+                        particle.style.left = `${Math.random() * 100}vw`;
+                        particle.style.top = `${-10 * Math.random()}vh`;
+                        particleContainer.appendChild(particle);
+                    }
+                </script>  
             </div>
         </section>
     </main>
