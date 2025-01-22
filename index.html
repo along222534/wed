@@ -271,6 +271,17 @@ body::before {
             });
         }
     </script>
+     <script>
+        function switchLanguage(lang) {
+            const elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(element => {
+                const text = element.getAttribute(`data-${lang}`);
+                if (text) {
+                    element.innerHTML = text;
+                }
+            });
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -284,8 +295,11 @@ body::before {
         <a href="answers.html" data-lang data-en="Answers" data-th="เฉลยคำตอบ">Answers</a>
     </nav>
     <div class="language-switch">
-        <p>Choose Language: <a href="#" onclick="switchLanguage('en')">English</a> | <a href="#" onclick="switchLanguage('th')">ภาษาไทย</a></p>
-    </div>
+        <p>Choose Language: 
+            <a href="#" onclick="switchLanguage('en')">English</a> | 
+            <a href="#" onclick="switchLanguage('th')">ภาษาไทย</a>
+        </p>
+    </div>    
     <main>
         <section id="viruses">
             <h2 data-lang data-en="Types of Computer Viruses" data-th="ประเภทของไวรัสคอมพิวเตอร์">Types of Computer Viruses</h2>
@@ -310,7 +324,8 @@ body::before {
             </ul>
         <section id="game">
             <h2 data-lang data-en="Play Cyber Virus" data-th="เล่นไซเบอร์ไวรัส">Play Cyber Virus</h2>
-            <p data-lang data-en="Experience the excitement of our game and learn more about cybersecurity." data-th="สัมผัสความตื่นเต้นของเกมของเราและเรียนรู้เพิ่มเติมเกี่ยวกับความปลอดภัยทางไซเบอร์">Experience the excitement of our game and learn more about cybersecurity. <a href="#">Download the game here</a>.</p>
+            <p data-lang data-en="Experience the excitement of our game and learn more about cybersecurity." data-th="สัมผัสความตื่นเต้นของเกมของเราและเรียนรู้เพิ่มเติมเกี่ยวกับความปลอดภัยทางไซเบอร์">Experience the excitement of our game and learn more about cybersecurity. 
+            <a href="#">Download the game here</a>.</p> 
         </section>
         <section id="learn-video">
             <h2 data-lang data-en="Learn with Video" data-th="เรียนรู้ผ่านวิดีโอ">Learn with Video</h2>
