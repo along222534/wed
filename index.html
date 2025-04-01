@@ -108,50 +108,16 @@
     <div class="container">
         <h2>NestlePureLife x BUS</h2>
         <p class="subtitle">กรุณากรอกข้อมูลให้ครบถ้วน</p>
-        <form id="addressForm">
+        <form action="payment.html" method="GET">
             <label for="twitter">Twitter Account เพิ่ม @ (Ex.@pccream__pp)</label>
             <input type="text" id="twitter" name="twitter" placeholder="@yourusername" required>
 
             <label for="address">ชื่อผู้รับ - ที่อยู่ - รหัสไปรษณีย์ - เบอร์โทร</label>
             <textarea id="address" name="address" placeholder="กรุณากรอกข้อมูลให้ครบถ้วน" required></textarea>
-            <p class="note">ถ้าข้อมูลไม่ครบ ของตีกลับ ต้องออกค่าส่งใหม่เองนะคะ</p>
+            <p class="note">* ถ้าข้อมูลไม่ครบ ของตีกลับ ต้องออกค่าส่งใหม่เองนะคะ</p>
 
             <button type="submit">ถัดไป</button>
         </form>
     </div>
-    <script>
-        // เพิ่ม event listener ให้ฟอร์ม submit
-        document.getElementById("addressForm").addEventListener("submit", async function(event) {
-            event.preventDefault(); // ป้องกันการส่งฟอร์มปกติ
-            
-            let twitter = document.getElementById("twitter").value;
-            let address = document.getElementById("address").value;
-
-            let data = {
-                twitter: twitter,
-                address: address
-            };
-
-            // ส่งข้อมูลไปยัง Google Apps Script
-            fetch("https://script.google.com/macros/s/AKfycbzKgFfzM0yQp5kvkaqvnE7040uQBJdyG__BEoh3LO0/dev", {
-                method: "POST",
-                body: JSON.stringify(data),
-                headers: { "Content-Type": "application/json" }
-            })
-            .then(response => response.text())
-            .then(result => {
-                if (result === "Success") {
-                    alert("✅ ข้อมูลถูกบันทึกแล้ว!");
-                    window.location.href = "payment.html"; // ไปหน้าถัดไป
-                } else {
-                    alert("เกิดข้อผิดพลาดในการบันทึกข้อมูล");
-                }
-            })
-            .catch(error => {
-                console.error("Error:", error);
-                alert("เกิดข้อผิดพลาด");
-            });
-        });
-    </script>
 </body>
 </html>
