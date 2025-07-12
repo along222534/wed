@@ -1,125 +1,367 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>NestlePureLife x BUS ฟอร์มโอนเงิน</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Virus - Learn About Computer Viruses</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0d1117;
+            color: #c9d1d9;
+        }
+        header {
+            background: linear-gradient(135deg, #1f1f1f, #2c2c2c);
+            color: #00ffff;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+        }
+        header p {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #80e0ff;
+        }
+        nav {
+            background-color: #161b22;
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        nav a {
+            color: #00ffff;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-size: 1rem;
+            position: relative;
+        }
+        nav a:hover {
+            color: #80e0ff;
+            text-shadow: 0 0 8px #00ffff;
+        }
+        nav a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #00ffff;
+            transition: width 0.3s;
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+        .language-switch {
+            margin-top: 1rem;
+            text-align: center;
+        }
+        .language-switch a {
+            color: #00ffff;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            font-size: 1rem;
+        }
+        .language-switch a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        section {
+            margin-bottom: 3rem;
+            background: #161b22;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+        section h2 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid #00ffff;
+            padding-bottom: 0.5rem;
+            color: #80e0ff;
+        }
+        section p, section ul {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        section ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        section ul li {
+            margin: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        section ul li::before {
+            content: '>';
+            color: #00ffff;
+            position: absolute;
+            left: 0;
+        }
+        footer {
+            background: #1f1f1f;
+            color: #80e0ff;
+            text-align: center;
+            padding: 1.5rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.5);
+        }
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+            nav a {
+                margin: 0.5rem 0;
+            }
+        }
+    #learn-video {
+        margin-top: 2rem;
+        text-align: center;
+        padding: 2rem;
+        background-color: #2a2a3b;
+        color: #f4f4f4;
+        border-radius: 8px;
+    }
+
+    #learn-video h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        color: #00c4ff;
+    }
+
+    #learn-video p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Video container for responsiveness */
+    .video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    border: 3px solid transparent;
+    background-image: linear-gradient(#2a2a3b, #2a2a3b),
+                      linear-gradient(135deg, #00ffff, #0088ff);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    border: none;
+    border-radius: 8px;
+}
+
+/* เอฟเฟกต์เรืองแสง */
+.video-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 8px;
+    box-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff, 0 0 45px #0088ff;
+    pointer-events: none;
+    animation: glow-effect 2s infinite alternate;
+}
+
+@keyframes glow-effect {
+    from {
+        box-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff, 0 0 45px #0088ff;
+    }
+    to {
+        box-shadow: 0 0 25px #00ffff, 0 0 45px #00ffff, 0 0 60px #0088ff;
+    }
+}
+/* เอฟเฟกต์อนุภาค */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes particle {
+    from {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100vh) translateX(calc(20px * var(--dir)));
+        opacity: 0;
+    }
+}
+
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #00ffff;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: particle linear infinite;
+}
+
+#particle-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none;
+}
+
+#particle-container .particle:nth-child(odd) {
+    background: #0088ff;
+}
+
+#particle-container .particle {
+    --dir: 1;
+    animation-duration: calc(2s + 3s * random());
+    animation-delay: calc(-3s * random());
+    transform: translateX(calc(100vw * random())) translateY(calc(-100vh * random()));
+}
+
+</style>
+    </style>
+    <script>
+        function switchLanguage(lang) {
+            const elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(element => {
+                const text = element.getAttribute(`data-${lang}`);
+                if (text) {
+                    element.textContent = text;
+                }
+            });
+        }
+    </script>
+     <script>
+        function switchLanguage(lang) {
+            const elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(element => {
+                const text = element.getAttribute(`data-${lang}`);
+                if (text) {
+                    element.innerHTML = text;
+                }
+            });
+        }
+    </script>
 </head>
 <body>
-  <h1>NestlePureLife x BUS</h1>
-  <div class="note">
-    𝆚 เมมเบอละ 300 บาท / ได้ครบ 2 ver.<br>
-    𝆚 ส่งฟรี 🚚<br>
-    𝆚 หากเป็นพื้นที่ห่างไกล +50 บาท<br><br>
-    ช่องทางการชำระเงิน:<br>
-    𝆚 ธนาคารไทยพาณิชย์<br>
-    𝆚 เลขบัญชี 439-078532-2<br>
-    𝆚 ชื่อบัญชี นางสาวพรธิดา ชะรอยรัมย์
-  </div>
-
-  <form id="paymentForm">
-    <label>1. Twitter Account (@...):</label>
-    <input type="text" name="twitter" required>
-
-    <!-- Set A -->
-    <div id="setA">
-      <label>2.1 เลือกเมมเบอร์ที่จอง Set A:</label>
-      <div class="checkbox-group">
-        <label><input type="checkbox" name="setA[]" value="อลัน" onclick="calculateTotal()"> อลัน</label>
-        <label><input type="checkbox" name="setA[]" value="มาร์ค" onclick="calculateTotal()"> มาร์ค</label>
-        <label><input type="checkbox" name="setA[]" value="ขุนพล" onclick="calculateTotal()"> ขุนพล</label>
-        <label><input type="checkbox" name="setA[]" value="ฮาร์ท" onclick="calculateTotal()"> ฮาร์ท</label>
-        <label><input type="checkbox" name="setA[]" value="จินวุค" onclick="calculateTotal()"> จินวุค</label>
-        <label><input type="checkbox" name="setA[]" value="เน้ก" onclick="calculateTotal()"> เน้ก</label>
-        <label><input type="checkbox" name="setA[]" value="ไทย" onclick="calculateTotal()"> ไทย</label>
-        <label><input type="checkbox" name="setA[]" value="คอปเปอร์" onclick="calculateTotal()"> คอปเปอร์</label>
-        <label><input type="checkbox" name="setA[]" value="เอเอ" onclick="calculateTotal()"> เอเอ</label>
-        <label><input type="checkbox" name="setA[]" value="จั๋ง" onclick="calculateTotal()"> จั๋ง</label>
-        <label><input type="checkbox" name="setA[]" value="ภีม" onclick="calculateTotal()"> ภีม</label>
-        <label><input type="checkbox" name="setA[]" value="ไม่ระบุ" onclick="calculateTotal()"> ไม่ระบุ</label>
-      </div>
-    </div>
-
-    <!-- Set B -->
-    <div id="setB">
-      <label>2.2 เลือกเมมเบอร์ที่จอง Set B:</label>
-      <div class="checkbox-group">
-        <label><input type="checkbox" name="setB[]" value="อลัน" onclick="calculateTotal()"> อลัน</label>
-        <label><input type="checkbox" name="setB[]" value="มาร์ค" onclick="calculateTotal()"> มาร์ค</label>
-        <label><input type="checkbox" name="setB[]" value="ขุนพล" onclick="calculateTotal()"> ขุนพล</label>
-        <label><input type="checkbox" name="setB[]" value="ฮาร์ท" onclick="calculateTotal()"> ฮาร์ท</label>
-        <label><input type="checkbox" name="setB[]" value="จินวุค" onclick="calculateTotal()"> จินวุค</label>
-        <label><input type="checkbox" name="setB[]" value="เน้ก" onclick="calculateTotal()"> เน้ก</label>
-        <label><input type="checkbox" name="setB[]" value="ไทย" onclick="calculateTotal()"> ไทย</label>
-        <label><input type="checkbox" name="setB[]" value="คอปเปอร์" onclick="calculateTotal()"> คอปเปอร์</label>
-        <label><input type="checkbox" name="setB[]" value="เอเอ" onclick="calculateTotal()"> เอเอ</label>
-        <label><input type="checkbox" name="setB[]" value="จั๋ง" onclick="calculateTotal()"> จั๋ง</label>
-        <label><input type="checkbox" name="setB[]" value="ภีม" onclick="calculateTotal()"> ภีม</label>
-        <label><input type="checkbox" name="setB[]" value="ไม่ระบุ" onclick="calculateTotal()"> ไม่ระบุ</label>
-      </div>
-    </div>
-
-    <label>3. ยอดโอน (ระบบจะคำนวณอัตโนมัติ):</label>
-    <input type="text" name="totalAmount" id="amount" readonly required>
-
-    <label>4. ชื่อผู้รับ - ที่อยู่ - รหัสไปรษณีย์ - เบอร์โทร:</label>
-    <textarea name="address" rows="3" required></textarea>
-    <div class="note">*ถ้าข้อมูลไม่ครบ ของตีกลับ ต้องออกค่าส่งใหม่เองนะคะ</div>
-
-    <label>5. แนบสลิปการโอน</label>
-    <input type="file" name="slip" id="slip" accept="image/*" required>
-
-    <button type="submit">ส่งฟอร์ม</button>
-  </form>
-
-  <script>
-    function calculateTotal() {
-      const selectedCheckboxes = document.querySelectorAll('#setA input[type="checkbox"]:checked, #setB input[type="checkbox"]:checked');
-      const totalAmount = selectedCheckboxes.length * 300;
-      document.getElementById("amount").value = totalAmount;
-    }
-  
-    // ✅ เปลี่ยนจาก onclick เป็น event listener รวม
-    document.addEventListener("change", function (e) {
-      if (e.target.matches('input[type="checkbox"]')) {
-        calculateTotal();
-      }
-    });
-  
-    const form = document.getElementById("paymentForm");
-    const amountInput = document.getElementById("amount");
-  
-    form.addEventListener("submit", async function (e) {
-      e.preventDefault();
-  
-      const slipFile = document.getElementById("slip").files[0];
-      const reader = new FileReader();
-      reader.onloadend = async function () {
-        const base64String = reader.result.split(",")[1];
-  
-        const setAValues = [...document.querySelectorAll('input[name="setA[]"]:checked')].map(el => el.value).join(", ");
-        const setBValues = [...document.querySelectorAll('input[name="setB[]"]:checked')].map(el => el.value).join(", ");
-  
-        const formData = new URLSearchParams();
-        formData.append("twitter", form.twitter.value);
-        formData.append("setA", setAValues);
-        formData.append("setB", setBValues);
-        formData.append("totalAmount", form.totalAmount.value);
-        formData.append("address", form.address.value);
-        formData.append("slipBytes", base64String);
-  
-        const response = await fetch("https://script.google.com/macros/s/AKfycbwAwaIlAhRBbgmeVqns5j-tbD_43ueWh16dm1wQSEqPzM34SHek-UAgi2fHnekZYV1t/exec", {
-          method: "POST",
-          body: formData,
-        });
-  
-        const result = await response.text();
-        alert(result);
-        form.reset();
-        amountInput.value = "";
-      };
-      reader.readAsDataURL(slipFile);
-    });
-  </script>  
+    <header>
+        <h1 data-lang data-en="Cyber Virus" data-th="ไซเบอร์ไวรัส">Cyber Virus</h1>
+        <p data-lang data-en="Your Resource for Learning About Computer Viruses" data-th="แหล่งความรู้เกี่ยวกับไวรัสคอมพิวเตอร์">Your Resource for Learning About Computer Viruses</p>
+    </header>
+    <nav>
+        <a href="#viruses" data-lang data-en="Virus Types" data-th="ประเภทของไวรัส">Virus Types</a>
+        <a href="#prevention" data-lang data-en="Prevention" data-th="การป้องกัน">Prevention</a>
+        <a href="#game" data-lang data-en="Play the Game" data-th="เล่นเกม">Play the Game</a>
+        <a href="answers.html" data-lang data-en="Answers" data-th="เฉลยคำตอบ">Answers</a>
+    </nav>
+    <div class="language-switch">
+        <p>Choose Language: 
+            <a href="#" onclick="switchLanguage('en')">English</a> 
+            <a href="#" onclick="switchLanguage('th')">ภาษาไทย</a>
+        </p>
+    </div>    
+    <main>
+        <section id="viruses">
+            <h2 data-lang data-en="Types of Computer Viruses" data-th="ประเภทของไวรัสคอมพิวเตอร์">Types of Computer Viruses</h2>
+            <p data-lang data-en="Learn about different types of computer viruses, their behavior, and examples:" data-th="เรียนรู้เกี่ยวกับประเภทของไวรัสคอมพิวเตอร์ พฤติกรรม และตัวอย่าง:">Learn about different types of computer viruses, their behavior, and examples:</p>
+            <ul>
+                <li data-lang data-en="Trojan Horse: Malicious software disguised as legitimate." data-th="ม้าโทรจัน: ซอฟต์แวร์ที่เป็นอันตรายปลอมเป็นซอฟต์แวร์ปกติ">Trojan Horse: Malicious software disguised as legitimate.</li>
+                <li data-lang data-en="Worm: Self-replicating virus that spreads through networks." data-th="เวิร์ม: ไวรัสที่แพร่กระจายผ่านเครือข่าย">Worm: Self-replicating virus that spreads through networks.</li>
+                <li data-lang data-en="Ransomware: Encrypts your data and demands payment for decryption." data-th="แรนซัมแวร์: เข้ารหัสข้อมูลของคุณและเรียกร้องค่าไถ่เพื่อถอดรหัส">Ransomware: Encrypts your data and demands payment for decryption.</li>
+                <li data-lang data-en="Spyware: Software that secretly gathers user data." data-th="สปายแวร์: ซอฟต์แวร์ที่แอบเก็บข้อมูลผู้ใช้">Spyware: Software that secretly gathers user data.</li>
+                <li data-lang data-en="Adware: Displays unwanted advertisements." data-th="แอดแวร์: แสดงโฆษณาที่ไม่พึงประสงค์">Adware: Displays unwanted advertisements.</li>
+                <li data-lang data-en="Rootkit: Hides malicious activities from detection." data-th="รูทคิท: ซ่อนกิจกรรมที่เป็นอันตราย">Rootkit: Hides malicious activities from detection.</li>
+                <li data-lang data-en="File Infector: Embeds itself into files and spreads." data-th="ไฟล์อินเฟคเตอร์: แฝงตัวในไฟล์และแพร่กระจาย">File Infector: Embeds itself into files and spreads.</li>
+            </ul>
+        </section>
+        <section id="prevention">
+            <h2 data-lang data-en="Prevention Tips" data-th="เคล็ดลับการป้องกัน">Prevention Tips</h2>
+            <p data-lang data-en="Follow these tips to protect your system:" data-th="ทำตามเคล็ดลับเหล่านี้เพื่อปกป้องระบบของคุณ:">Follow these tips to protect your system:</p>
+            <ul>
+                <li data-lang data-en="Install reputable antivirus software." data-th="ติดตั้งซอฟต์แวร์ป้องกันไวรัสที่เชื่อถือได้">Install reputable antivirus software.</li>
+                <li data-lang data-en="Keep your operating system and applications updated." data-th="อัปเดตระบบปฏิบัติการและแอปพลิเคชันของคุณ">Keep your operating system and applications updated.</li>
+                <li data-lang data-en="Avoid clicking on suspicious links or downloading unknown files." data-th="หลีกเลี่ยงการคลิกลิงก์ที่น่าสงสัยหรือดาวน์โหลดไฟล์ที่ไม่รู้จัก">Avoid clicking on suspicious links or downloading unknown files.</li>
+            </ul>
+        <section id="game">
+            <h2 data-lang data-en="Play Cyber Virus" data-th="เล่นไซเบอร์ไวรัส">Play Cyber Virus</h2>
+            <p data-lang data-en="Experience the excitement of our game and learn more about cybersecurity." data-th="สัมผัสความตื่นเต้นของเกมของเราและเรียนรู้เพิ่มเติมเกี่ยวกับความปลอดภัยทางไซเบอร์">Experience the excitement of our game and learn more about cybersecurity. 
+            <a href="#">Download the game here</a>.</p> 
+        </section>
+        <section id="learn-video">
+            <h2 data-lang data-en="Learn with Video" data-th="เรียนรู้ผ่านวิดีโอ">Learn with Video</h2>
+            <p data-lang data-en="Watch this video to understand more about computer viruses and cybersecurity." 
+               data-th="ชมวิดีโอนี้เพื่อเข้าใจเพิ่มเติมเกี่ยวกับไวรัสคอมพิวเตอร์และความปลอดภัยทางไซเบอร์">
+               Watch this video to understand more about computer viruses and cybersecurity.
+            </p>
+            <div class="video-container">
+                <video controls>
+                    <source src="สงครามไซเบอร์ครั้งแรกของโลก.mp4" type="video/mp4">
+                    <p>Your browser does not support HTML5 video. Here is a <a href="ส.mp4">link to the video</a> instead.</p>
+                </video>
+                <script>
+                    function random() {
+                        return Math.random();
+                    }
+                
+                    const particleContainer = document.createElement('div');
+                    particleContainer.id = 'particle-container';
+                    document.body.appendChild(particleContainer);
+                
+                    for (let i = 0; i < 50; i++) {
+                        const particle = document.createElement('div');
+                        particle.className = 'particle';
+                        particle.style.animationDuration = `${2 + 3 * Math.random()}s`;
+                        particle.style.animationDelay = `-${3 * Math.random()}s`;
+                        particle.style.left = `${Math.random() * 100}vw`;
+                        particle.style.top = `${-10 * Math.random()}vh`;
+                        particleContainer.appendChild(particle);
+                    }
+                </script>  
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Cyber Virus Team. </p>
+    </footer>
 </body>
 </html>
